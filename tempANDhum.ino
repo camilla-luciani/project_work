@@ -34,7 +34,7 @@ int motore = 6;
 
 void setup() {
   // put your setup code here, to run once:
-  Serial.begin(9600);     // inizializzo la comunicazione) seriale
+  Serial.begin(9600);     // inizializzo la comunicazione seriale
   mio_dht.begin();    // inizializzo sensore
 
   // output led
@@ -65,6 +65,9 @@ void setup() {
   Serial.print(umidita);
   Serial.print(" Temperatura: ");
   Serial.println(temperatura);
+
+    String tmp = "{\"temperatura\":" + String(temperatura) + ",\"umidita\":" + String(umidita) +"}";  //inizializzo la stringa
+  Serial.println(tmp);
   
   // colore del led
   if(umidita < 43)
