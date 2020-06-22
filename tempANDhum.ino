@@ -60,13 +60,7 @@ void setup() {
   // lettura temperatura
   temperatura = mio_dht.readTemperature();
 
-  // stampa valori umidità e temperatura
-  Serial.print("Umidità: ");
-  Serial.print(umidita);
-  Serial.print(" Temperatura: ");
-  Serial.println(temperatura);
-
-    String tmp = "{\"temperatura\":" + String(temperatura) + ",\"umidita\":" + String(umidita) +"}";  //inizializzo la stringa
+  String tmp = "{\"temperatura\":" + String(temperatura) + ",\"umidita\":" + String(umidita) +"}";  //inizializzo la stringa
   Serial.println(tmp);
   
   // colore del led
